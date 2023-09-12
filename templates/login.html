@@ -1,0 +1,41 @@
+{% extends 'base/navbar.html' %}
+
+{% block title_extend %}Login{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+
+{% block content %}
+        <div class="container" style="margin-bottom: 10rem;">
+            <div class="row justify-content-center mt-5">
+                <div class="col-12 col-md-6 p-5 bg-light">
+                    <form action="" method="POST">
+
+                        {% csrf_token %}
+                        <h1>Sign in</h1>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                       
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <input type="hidden" name="next" value="{{next}}">
+                        <p class="form-text text-muted">Don't have an account? <a href="/accounts/register">Click here to create one</a></p>
+                    </form>
+                </div>
+            </div>
+            {% if messages %}
+            <div class="row justify-content-center mt-5">
+                <div class="col-12 col-md-6 p-3 border rounded-lg bg-danger">
+                    {% for message in messages %}
+                        <p class="text-light"><i class="fas fa-info-circle"></i> {{message}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+{% endblock %}

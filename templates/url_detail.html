@@ -1,0 +1,396 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+
+{% block title_extend %}Url details{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css"
+    href="{% static 'product/css/url_detail.css' %}">
+
+<div class="wrapper" style="margin-bottom: 10rem;">
+    <div class="container-fluid mt-5 pt-3">
+        <section class="title">
+            <h1>PHISHDETECT</h1>
+            <p style="
+            text-align: center;
+            max-width: 80%;
+            margin: auto;
+            padding-top: 30px;
+            font-size: 13px;">Explore the PhishDetect Results: Check the URL's
+                Phishing Status and dive into
+                <b>Detailed Information below</b> for a Comprehensive Analysis.
+            </p>
+            <hr>
+        </section>
+        <div class="row"
+            style="height: 250px; align-items: center; margin-top: 3rem; margin-bottom: 3rem;">
+            <!-- Spin UI -->
+            <div class="col-md-2 col-2" style="height: inherit;">
+                {%ifequal Result.status "phishing" %}
+                <div class="box-alert">
+                    <div class="content"><img
+                            src="https://abdelrahman345.netlify.app/images/me.jpg" />
+                        <h2>{{ Result.status }}</h2>
+                    </div>
+                </div>
+                {% endifequal %}
+                {%ifequal Result.status "warning" %}
+                <div class="box-warning">
+                    <div class="content"><img
+                            src="https://abdelrahman345.netlify.app/images/me.jpg" />
+                        <h2>{{ Result.status }}</h2>
+                    </div>
+                </div>
+                {% endifequal %}
+                {%ifequal Result.status "normal" %}
+                <div class="box">
+                    <div class="content"><img
+                            src="https://abdelrahman345.netlify.app/images/me.jpg" />
+                        <h2>{{ Result.status }}</h2>
+                    </div>
+                </div>
+                {% endifequal %}
+            </div>
+            <!-- Result summary table-->
+            <div class="col-md-7 col-7" style="height: inherit;">
+                <div class="card pd-info" style="height: inherit;">
+                    <div class="card-header">
+                        {%ifequal Result.status "normal" %}
+                        <span class="card-normal">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.993 8.842a.6.6 0 0 0-.986-.684l-4.464 6.423-3.628-3.482a.6.6 0 1 0-.83.866l4.135 3.968a.6.6 0 0 0 .908-.09l4.865-7Z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-1.2 0a8.8 8.8 0 1 1-17.6 0 8.8 8.8 0 0 1 17.6 0Z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </i>
+                            This url is supposed to be a {{Result.status}} url.
+                        </span>
+                        {% endifequal %}
+                        {%ifequal Result.status "phishing" %}
+                        <span class="card-alert">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.993 8.842a.6.6 0 0 0-.986-.684l-4.464 6.423-3.628-3.482a.6.6 0 1 0-.83.866l4.135 3.968a.6.6 0 0 0 .908-.09l4.865-7Z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-1.2 0a8.8 8.8 0 1 1-17.6 0 8.8 8.8 0 0 1 17.6 0Z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </i>
+                            This url is supposed to be a {{Result.status}} url.
+                        </span>
+                        {% endifequal %}
+                        {%ifequal Result.status "warning" %}
+                        <span class="card-warning">
+                            <i>
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.993 8.842a.6.6 0 0 0-.986-.684l-4.464 6.423-3.628-3.482a.6.6 0 1 0-.83.866l4.135 3.968a.6.6 0 0 0 .908-.09l4.865-7Z">
+                                    </path>
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-1.2 0a8.8 8.8 0 1 1-17.6 0 8.8 8.8 0 0 1 17.6 0Z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </i>
+                            This url is supposed to be a {{Result.status}} url.
+                        </span>
+                        {% endifequal %}
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>URL</th>
+                                    <td>{{Result.url}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Status</th>
+                                    <td>
+                                        {% if Result.is_live %}
+                                        Alive
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Brand name</b>
+                                    <td>{{Result.brand_name}}</p>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-4 col-4" style="height: inherit;">
+                <div class="card" style="height: inherit;">
+                    <img src="{{ Result.img_path.url }}" class="card-img-top" alt="PhishDetect Logo Identification" width="100%" height="200px" style="object-fit: contain;">
+                    <div class="card-body" style="color: #333; padding: 0.75rem 1.25rem;">
+                        <span>PhishDetect Logo Identification</span>
+                        <a href="/products/img/{{Result.url_id}}" style="margin-left: 12px;">View details</a>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="col-md-3 col-3" style="height: inherit;">
+                <div class="polaroid" style="width: 400px;">
+                    <div class="brand">
+                        <span>PhishDetect Logo Identification</span>
+                        <a href="/products/img/{{Result.url_id}}">View details</a>
+                    </div>
+                    <img src="{{ Result.img_path.url }}" class="card-img-top"
+                        alt="PhishDetect Logo Identification">
+                </div>
+            </div>
+
+        </div>
+
+        <section class="report-wrapper">
+
+            <h3 class="report-heading">PHISHING URL REPORT</h3>
+
+            <div class="tab-wrapper">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="summary-tab"
+                            data-toggle="tab" data-target="#summary"
+                            type="button" role="tab" aria-controls="summary"
+                            aria-selected="true">Summary</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="response-tab"
+                            data-toggle="tab" data-target="#response"
+                            type="button" role="tab" aria-controls="response"
+                            aria-selected="false">Response</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="information-tab"
+                            data-toggle="tab" data-target="#information"
+                            type="button" role="tab" aria-controls="information"
+                            aria-selected="false">Information</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="related-tab"
+                            data-toggle="tab" data-target="#related"
+                            type="button"
+                            role="tab" aria-controls="related"
+                            aria-selected="false">Related Pulses</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="summary"
+                        role="tabpanel" aria-labelledby="summary-tab">
+                        <div class="tab-content-wrapper">
+                            <div class="row">
+                                <div class="col-md-9 col-9">
+                                    <table class="table table-hover">
+                                        <tbody>
+                                            <tr>
+                                                <th>IP Address</th>
+                                                <td>{{Result.host}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Scheme</th>
+                                                <td>{{Result.scheme}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Tld</th>
+                                                <td>{{Result.tld}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Asn</th>
+                                                <td>{{Result.get_asn}}</td>
+                                            </tr>
+                                            
+
+                                            <tr>
+                                                <th>Country</th>
+                                                <td>{{Result.host_country}}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Open ports</th>
+                                                <td>{{Result.open_ports}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Subdomains</th>
+                                                <td>{{Result.subdomains}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Hostnames</th>
+                                                <td
+                                                    style="white-space: pre-line;">{{Result.hostnames}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Name server</th>
+                                                <td
+                                                    style="white-space: pre-line;">{{Result.nameServerwhois}}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Isp</th>
+                                                <td>{{Result.isp}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Connection speed</th>
+                                                <td>{{Result.connection_speed}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>VirusTotal scan</th>
+                                                <td>{{Result.vt_score}}</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-3 col-3">
+                                    <div class="polaroid" style="width: 400px; height: 300px;">
+                                        <div class="brand">
+                                            <span>Location</span>
+                                            <!-- <a
+                                                href="/products/location/{{Result.url_id}}">View
+                                                details</a> -->
+                                                
+                                        </div>
+                                        <iframe width="100%" height="100%" src="{{ Result.loc_path.url }}" title="Location">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="response" role="tabpanel"
+                        aria-labelledby="response-tab">
+                        <div class="tab-content-wrapper">
+
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <th>Final url</th>
+                                        <td>{{Result.finalurl}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status code</th>
+                                        <td>{{Result.status_code}}</td>
+                                    </tr>
+
+                                
+
+                                    <tr>
+                                        <th>Suspecious tld</th>
+                                        <td>{{Result.suspecious_tld}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Header response</th>
+                                        <td
+                                            style="white-space: pre-line; line-break: anywhere;">{{Result.headers}}</td>
+                                    </tr>
+                                    {% ifequal Result.HTMLinfo "False" %}
+                                    <tr>
+                                        <th>HTMLinfo</th>
+                                        <td style="white-space: pre-line; line-break: anywhere;">{{Result.HTMLinfo}}</td>
+                                    </tr>
+                                    {% endifequal %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="information" role="tabpanel"
+                        aria-labelledby="information-tab">
+                        <div class="tab-content-wrapper">
+                            <p><b><u>Lifecycle Information</u></b></p>
+                            <table class="table table-hover">
+                                <tbody>
+                                    <!-- {% ifequal Result.has_port_in_string "False" %}
+                                    <tr>
+                                        <th>has_port_in_string</th>
+                                        <td>{{Result.has_port_in_string}}</td>
+                                    </tr>
+                                    {% endifequal %} -->
+                                    <tr>
+
+                                        <th>Having IP address in hostname</th>
+                                        <td>{{Result.ip}}</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <th>Registration date</th>
+                                        <td>{{Result.registration_date}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Expiration date</th>
+                                        <td>{{Result.expiration_date}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Last updates dates</th>
+                                        <td>{{Result.last_updates_dates}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Intended life span</th>
+                                        <td>{{Result.intended_life_span}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Life remaining</th>
+                                        <td>{{Result.life_remaining}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time to live</th>
+                                        <td>{{Result.ttl}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="related" role="tabpanel"
+                        aria-labelledby="related-tab">
+                        <div class="tab-content-wrapper">
+                           
+                            <table id="example" class="table table-bordered table-hover"
+                                style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Associated Urls</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    {% for u in related_pulses %}
+                                    <tr>
+                                        <td><a href="/products/viewurl/{{u.url_id}}" class="link-underline-light"
+                                            style="color: #333;">{{u.url}}</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            
+                            <!-- <table class="table table-hover">
+
+                                
+                            </table> -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+{% endblock content %}

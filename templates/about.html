@@ -1,0 +1,46 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+
+
+{% block title_extend %}Imgage details{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'about/css/about.css' %}">
+
+<div class="container">
+    <div class="about-section">
+        <img src="{% static 'about/img/t.png' %}" alt="" class="phishing-img">
+        <div class="subicon animate">
+            <img src="{% static 'about/img/c.png' %}" class="subicon_sub" >
+            <img src="{% static 'about/img/c1.png' %}" class="subicon_sub_1 ">
+            <img src="{% static 'about/img/c2.png' %}" class="subicon_sub_2">
+        </div>
+        <div class="inner-container">
+            <h1>ABOUT PHISHDETECT</h1>
+            <p class="text">
+                Welcome to Phishdetect, your trusted online resource for detecting phishing websites. In an era where cyber threats are becoming increasingly sophisticated, we understand the importance of staying vigilant and protecting yourself and your valuable information from malicious actors.
+            </p>
+            <p class="text">
+                Whether you're an individual concerned about protecting your personal information or an organization looking to fortify your cybersecurity defenses, Phishdetect is here to assist you. We believe that by working together, we can create a safer digital environment and mitigate the risks posed by phishing attacks.
+                Join us in our mission to combat phishing and protect the online community. Explore our resources, tools, and insights to enhance your digital security and stay one step ahead of cyber threats. Together, let's make the internet a safer place for everyone.
+            </p>
+            <p class="text">Remember, vigilance is key, and with Phishdetect, you can detect and stay protected from phishing attempts.</p>
+            <div class="skills">
+                <span><a href="details" style="color: #545454;">Details of PhishDetect</a></span>
+                <span><a href="/contact" style="color: #545454;" >Contact us</a> </span>
+                {% if user.is_authenticated %}
+                    <span><a href="/products" >Get Started</a> </span>
+                {% else %}
+                <span><a href="/accounts/login?next={{request.path}}" >Sign in</a> </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+</div>
+ 
+{% endblock content %}
+

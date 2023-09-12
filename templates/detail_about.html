@@ -1,0 +1,56 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+
+
+{% block title_extend %}Imgage details{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'about/css/about.css' %}">
+
+
+    <div class="about-section">
+        <div class="text-container">
+            <h1>ABOUT PHISHDETECT</h1>
+            <p class="text">
+                PhishDetect is a sophisticated online platform designed to provide comprehensive protection against phishing websites. 
+                With its advanced technology and intelligent algorithms, PhishDetect offers in-depth insights into the legitimacy of URLs, 
+                helping users make informed decisions and stay safe in the digital landscape.
+            </p>
+            <p>Key features of PhishDetect:</p>
+            <p>
+               
+                <li>Cutting-edge Phishing Detection: PhishDetect utilizes a combination of machine learning and deep learning techniques 
+                    to analyze URLs and accurately detect potential phishing attempts. By leveraging state-of-the-art algorithms, PhishDetect provides robust protection
+                     against evolving phishing threats.</li>
+                <li>
+                    Hybrid Deep Learning Model: PhishDetect employs a hybrid deep learning model that integrates Logo2K+ dataset to classify over 2000 brands accurately. By detecting logos using object detection models and comparing them using a siamese model, PhishDetect delivers precise identification results, ensuring effective phishing detection.
+                </li>
+                <li>
+                    Supervised Machine Learning: With a curated dataset of 2000+ URLs, including both phishing and benign URLs, PhishDetect leverages supervised machine learning to extract relevant features and train models. By using evalML and selecting the random forest model, PhishDetect achieves high accuracy, around 98%, in identifying phishing URLs.
+                
+            </li>
+                <li>User-friendly Interface: PhishDetect provides a user-friendly interface that enables easy URL input and displays intuitive results. The platform presents clear indicators and explanations to help users understand the legitimacy of a website, empowering them to make informed decisions and protect their valuable information.
+                </li>
+            </p>
+            <p>With PhishDetect, users can enhance their understanding of potential phishing threats and take proactive measures to safeguard their online security. Stay one step ahead of cybercriminals with the comprehensive protection and advanced capabilities offered by PhishDetect.
+            </p>
+            <div class="skills">
+                {% if user.is_authenticated %}
+                    <span><a href="/products" >Get Started</a> </span>
+                {% else %}
+                <span><a href="/accounts/login?next={{request.path}}" >Sign in</a> </span>
+                {% endif %}
+
+                <span><a href="/contact" style="color: #545454;" >Contact us</a> </span>
+            </div>
+        </div>
+    </div>
+    
+
+ 
+    
+
+{% endblock %}

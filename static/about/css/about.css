@@ -1,0 +1,168 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #f1f1f1; */
+  max-width: 100%;
+}
+.about-section{
+  overflow: hidden;
+  padding: 100px 0;
+  display: inline-flex;
+  justify-content: center;
+}
+.phishing-img {
+  width: 35%;
+  height: fit-content;
+  display: inline-block;
+  animation: myfirst 1.5s linear 0s infinite alternate;
+}
+.subicon{
+  display: inline-block !important;
+  padding: 10px;
+  
+}
+.subicon_sub {
+  width: 13vh;
+  display: block !important;
+  transform: rotate(45deg);
+  animation: myfirst 1.5s linear 0s infinite alternate;
+}
+.subicon_sub_1 {
+  width: 20vh;
+  display: block !important;
+  padding-top: 15px;
+  animation: myfirst 2s linear 0s infinite alternate;
+}
+.subicon_sub_2 {
+  width: 13vh;
+  display: block !important;
+  transform: rotate(45deg);
+  padding-top: 15px;
+  /* animation: 2s ease-out 0s 1 myfirst; */
+  animation: myfirst 1s linear 0s infinite alternate;
+}
+
+@keyframes myfirst {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.inner-container{
+  width: 55%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 50px;
+  box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      
+}
+.inner-container h1{
+  margin-bottom: 30px ;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 15px;
+  color: #545454;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+.skills {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media screen and (max-width:1200px) {
+  .inner-container {
+    padding: 80px;
+    
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100% ;
+    padding: 100px 40px;
+    display: inline-block;
+    background: url("../img/t.png") no-repeat center;
+
+  }
+  .phishing-img{
+    width: 0px;
+    opacity: 0;     -webkit-transition: opacity 0.15s linear;     -o-transition: opacity 0.15s linear;     transition: opacity 0.15s linear; 
+  }
+  .subicon_sub, .subicon_sub_1, .subicon_sub_2 {
+    width: 0px;
+    display: inline-flex !important;
+    opacity: 0;     -webkit-transition: opacity 0.15s linear;     -o-transition: opacity 0.15s linear;     transition: opacity 0.15s linear; 
+    
+  }
+  
+  .inner-container{
+    width: 100%;
+  }
+  
+}
+
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    padding: 0;
+
+  }
+  .inner-container{
+    padding: 60px;
+  }
+  
+}
+.text-container{
+  width: 65%;
+  float: right;
+  background-color: #fdfdfd;
+  padding: 50px;
+  box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+}
+.text-container h1{
+  margin-bottom: 30px ;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+@media screen and (max-width:1200px) {
+  .text-container {
+    padding: 80px;
+    
+  }
+}
+@media screen and (max-width: 1000px) {
+  .about-section {
+    background-size: 100% ;
+    padding: 100px 40px;
+    display: inline-block;
+    background: url("../img/t.png") no-repeat center;
+
+  }
+  
+  .text-container{
+    width: 100%;
+  }
+  
+}
+
+

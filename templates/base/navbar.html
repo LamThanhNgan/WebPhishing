@@ -1,0 +1,138 @@
+{% extends 'base/template.html' %}
+
+{% block head %}
+    {% block head_extend %}{% endblock %}
+{% endblock %}
+
+{% block title %}
+    {% block title_extend %}{% endblock %}
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'product/css/navbar.css' %}">
+<nav class="navbar navbar-expand-lg navbar-light" style="padding-left: 3%; padding-right: 3%;">
+    <div>
+        <a class="navbar-brand" href="/phishpedia/">
+          <img src="{% static 'product/img/fish.png' %}" style="max-width: 40px; max-height: fit-content;"/>
+          PhishDetect</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+        </ul>
+        
+    </div>
+    
+    <div class="navbar-collapse collapse order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+                <li class="text-primary nav-item">
+                    <a class="nav-link" href="/accounts/information">InformationUser</a>
+                </li>
+                <li class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome, <span class="text-info">{{user.username}}</span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/accounts/logout?next=/"><i class="fas fa-sign-out-alt fa-fw"></i> Logout</a>
+                    </div>
+                
+                </li>
+            {% else %}
+            
+                <li class="text-primary nav-item">
+                    <a class="nav-link" href="/accounts/login?next={{request.path}}"><i class="fas fa-sign-in-alt fa-fw"></i> Sign in</a>
+                </li>
+                <li class="text-primary nav-item">
+                    <a class="nav-link" href="/accounts/register?next={{request.path}}" style="color: #0b4dda; font-weight: bold;"><i class="fas fa-user-plus fa-fw"></i> Sign up</a>
+                </li>
+        {% endif %}
+        </ul>
+    </div>
+</nav>
+        {% block content %}{% endblock %}
+
+        <!-- Footer -->
+<footer class="text-lg-start bg-light">
+    <section class="d-flex justify-content-center justify-content-lg-between border-top bg-white ">
+      <div class="container text-md-start mt-2" style="min-height: fit-content">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>PHISHDETECT
+            </h6>
+            <p>
+                PhishDetect is a comprehensive online platform that offers advanced capabilities in detecting phishing websites.
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            
+            <p>
+              <a href="/about" class="text-reset">About</a>
+            </p>
+            <p>
+                <a href="#!" class="text-reset">Top detections</a>
+              </p>
+          </div>
+          <!-- Grid column -->
+  
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="/about/details" class="text-reset">Learn more</a>
+            </p>
+            <p>
+              <a href="/contact/" class="text-reset">Contact us</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+  
+          
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+   
+    <!-- Grid container -->
+
+  </footer>
+  <!-- Footer -->
+
+
+
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        {% block script_body %}{% endblock%}
+{% endblock %}
+
+{% block script %}
+    {% block script_extend %}{% endblock %}
+{% endblock %}

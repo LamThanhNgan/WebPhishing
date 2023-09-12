@@ -1,0 +1,18 @@
+{% extends 'base/navbar.html' %}
+{% load static %}
+
+
+{% block title_extend %}Imgage details{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product/css/img_details.css' %}">
+<div class="wrapper" style="margin-bottom: 10rem;">
+    <div class="container-fluid mt-5 pt-3">
+        <img src="{{ obj.img_path.url }}" alt="PhishDetect Logo Identification" style="max-width: 100%;">
+    </div>
+    
+</div>
+{% endblock %}

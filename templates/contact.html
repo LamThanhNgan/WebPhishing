@@ -1,0 +1,118 @@
+{% extends 'base/navbar.html' %}
+{% block title_extend %}Imgage details{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet"  type="text/css" href="{% static 'contact/css/contact.css' %}">
+<section>
+  <div class="row">
+    <h1>Our Team</h1>
+  </div>
+  <div class="row">
+    <!-- Column 1-->
+    <div class="column">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'contact/img/62002328.jpg' %}" />
+        </div>
+        <h3>LE TON NHAN</h3>
+        <p>Final-year student majoring in Information Security</p>
+        <ul class="social-icon" >
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="https://www.facebook.com/tonnhan.le">
+              <ion-icon name="logo-facebook" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+              <ion-icon name="call" style="font-size: 1.5rem;"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="https://www.linkedin.com/in/nhân-lê-tôn-368a52226/">
+              <ion-icon name="logo-linkedin" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+              <ion-icon name="mail" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Column 2-->
+    <div class="column">
+      <div class="card">
+        <div class="img-container">
+          <img src="{% static 'contact/img/342999006.jpg' %}" />
+        </div>
+        <h3>LAM THANH NGAN</h3>
+        <p>Final-year student majoring in Information Security</p>
+        <ul class="social-icon" >
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="https://www.facebook.com/profile.php?id=100083182497704">
+              <ion-icon name="logo-facebook" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+              <ion-icon name="call" style="font-size: 1.5rem;"></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="https://www.linkedin.com/in/lam-thanh-ngan-60bb771b3/">
+              <ion-icon name="logo-linkedin" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+          <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+              <ion-icon name="mail" style="font-size: 1.5rem;" ></ion-icon>
+            </a></li>
+        </ul>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <div class="container">
+    <div class="contact-section">
+        <div class="inner-container">
+            <h1>LE TON NHAN</h1>
+            <p class="text">
+              Final-year student majoring in Information Security  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto aliquam facilis inventore, optio sapiente, quod adipisci veniam neque dolore quos architecto accusamus magni, asperiores repellat excepturi labore ea animi dolores?
+            </p>
+            <ul class="social-icon" >
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-facebook" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-twitter" style="font-size: 1.5rem;"></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-linkedin" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-instagram" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+              </ul>
+        </div>
+    </div>
+
+    <div class="contact-section-1">
+        
+        <div class="inner-container-1">
+            <h1>LAM THANH NGAN</h1>
+            <p class="text">
+              Final-year student majoring in Information Security  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto aliquam facilis inventore, optio sapiente, quod adipisci veniam neque dolore quos architecto accusamus magni, asperiores repellat excepturi labore ea animi dolores?
+            </p>
+            <ul class="social-icon" >
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-facebook" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-twitter" style="font-size: 1.5rem;"></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-linkedin" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+                <li class="social-icon__item"><a class="social-icon__link" style="color: #333;" href="#">
+                    <ion-icon name="logo-instagram" style="font-size: 1.5rem;" ></ion-icon>
+                  </a></li>
+              </ul>
+        </div>
+    </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
+    
+
+{% endblock %}

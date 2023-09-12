@@ -1,8 +1,22 @@
-#requirements
+Django
+django-mathfilters
+requests
+Levenshtein
+python-whois
+dnspython
+pyquery
 numpy
-django
-djangorestframework
-gunicorn
-sklearn
-icecream
+waybackpy
+shodan
 scikit-learn
+selenium
+pandas
+tldextract
+bs4
+Pillow
+# plotly
+gdown
+# kaleido
+webdriver-manager
+django-redis
+django-debug-toolbar

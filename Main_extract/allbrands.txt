@@ -1,0 +1,278 @@
+1&1 Ionos
+Absa Group
+adidas
+Adobe
+ADP
+Airbnb, Inc
+Alaska USA Federal Credit Union
+Alibaba
+Allegro
+Amazon
+ameli_fr
+American Express
+Americanas.com S
+anadolubank
+AOL
+Apple
+arnet_tech
+Aruba S.p.A
+ASB Bank Limited
+AT&T
+ATB Financial
+AutoScout24
+azul
+bahia
+Banca Sella
+Banco de Chile
+Banco de Cordoba
+Banco del Estado de Chile
+Banco do Brasil S.A
+Banco Safra
+banco_de_occidente
+banco_inter
+Bank Al Habib
+Bank of America
+Bank of Montreal
+Bank of New Zealand
+Bank of Scotland
+Bank of The Bahamas Limited
+Bankia
+barclaycard
+barclays
+BB&T Corporation
+bcp
+Belize Bank
+bestchange
+Bet365
+Bethpage Federal Credit Union
+BH Telecom
+blizzard
+Blockchain
+BNP Paribas
+Bouygues Telecom
+Boxberry
+bradesco
+BT Group plc
+BZSt
+Cairo Amman Bank
+Caixa Economica Federal
+Caixa Geral de Depositos
+CaixaBank
+Canadian Imperial Bank of Commerce
+capital_one
+Capitec Bank Limited
+cathay_bank
+Cembra Money Bank AG
+CenturyLink
+cetelem
+Charities Aid Foundation
+Chase Personal Banking
+Chronopost International
+Citrix ShareFile
+cloudconvert
+cloudns
+co.py
+cogeco
+Comcast Corporation
+Commonwealth Bank of Australia
+Cox Communications
+crate_and_barrel
+Credit Agricole S.A
+Credit du Nord
+Credit Suisse AG
+cryptobridge
+Daum
+db
+Delta Air Lines
+Desjardins
+Deutsche Telekom
+DGI (French Tax Authority)
+DHL
+Digital Federal Credit Union
+Discover
+dkb
+docmagic
+DocuSign
+Dropbox
+EarthLink
+eBay
+EE Limited
+eharmony
+Emirates NBD
+EMS
+Enel Energia S.p.A
+Equa bank
+erste
+Etisalat
+etrade
+Facebook
+Fifth Third Bank
+file_transfer
+First Investment Bank
+First National Bank SA
+fnac
+Free ISP
+Frontier Communications
+fsnb
+Giffgaff
+Global Sources HK
+GMX Mail
+GoDaddy
+Google
+Government of Canada
+gov_uk
+Grupo Santander
+grupo_bancolombia
+Halifax Bank of Scotland Plc
+hfe
+HSBC Bank
+htb
+Huntington Bank
+IBC Bank
+ICICI Bank Limited
+ieee
+iiNet Limited
+infinisource
+ING
+Instagram
+International Card Services B.V
+IRS
+Itau Unibanco S.A
+itunes
+Juno Online Services
+Key Bank
+Kiwibank Limited
+knab
+La Poste
+Landesbank Berlin AG
+latam
+la_banque_postale
+lcl
+LinkedIn Corporation
+Lloyds TSB Group
+Luno
+M & T Bank Coporation
+Made-In-China
+Maersk
+Magalu
+Mastercard International
+Match
+mbank
+MBNA Corportation
+mdpd
+Meridian Credit Union
+Microsoft OneDrive
+Mobile.de
+momentum_office_design
+Monmouth Telecom
+ms_bing
+ms_skype
+MWeb
+MyEtherWallet
+National Australia Bank Limited
+National Bank of Canada
+Nationwide Building Society
+NatWest Personal Banking
+Naver
+Navy Federal Credit Union
+NBT Bank
+NedBank Limited
+NetEase
+Neteller
+Netflix
+netsons
+nordea
+ocn
+Office365
+Ooredoo QSC
+Orange
+orange_rockland
+otrs
+OurTime Dating
+Outlook
+paschoalotto
+PayPal
+POF
+postbank
+PostFinance
+qnb
+Rabobank Nederland
+Rackspace
+Raiffeisen Bank S.A
+Rakuten
+RBC Royal Bank
+Royal KPN N.V
+RuneScape
+Sakura Internet
+Scotiabank
+Senior People Meet
+SF Express Co
+sharp
+shoptet
+sicil_shop
+Simplii Financial
+Singtel Optus
+smartsheet
+SMBC
+smiles
+snapchat
+SNS Bank N.V
+SOCIETE FRANCAISE DU RADIOTELEPHONE
+Societe Generale
+Spark New Zealand
+Sparkasse Bank
+Spectrum
+Spotify
+Square
+Standard Chartered Bank
+Steam
+strato
+Stripe
+summit_bank
+Suncorp Group
+sunrise
+SunTrust Bank
+Swiss Post
+Swisscom IT Services AG
+TalkTalk Communications
+taxact
+TD Bank Group
+tech_target
+Telekom Brunei
+Telstra Corporation Limited
+Telus
+test_rite
+The Vanguard Group
+Three UK
+timeweb
+TPG Telecom
+Trade Me NZ
+TradeKey
+TSB Bank Plc
+Twitter, Inc
+typeform
+U.S. Bank
+Uber
+UBS AG
+UniCredit Bank Aktiengesellschaft
+United Services Automobile Association
+Universo Online
+URSSAF
+Verizon Wireless
+Visa International Service Association
+VKontakte
+Vodafone
+walmart
+Webmail Provider
+Wells Fargo & Company
+Westpac Institutional Banking
+WeTransfer
+WhatsApp
+wp60
+xtrix_tv
+Yahoo!
+Yandex
+youtube
+ziggo
+zoominfo
+Zoopla

@@ -1,0 +1,37 @@
+{% extends 'base/navbar.html' %}
+
+<!-- {% block title_extend %}HomePage{% endblock %}
+
+{% block head_extend %}{% endblock %} -->
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product/css/homepage.css' %}">
+        <div class="view" style="min-height: fit-content; ">
+            <div class="hero" >
+                <div class="title">
+                    <h1>Protecting Your Online Experience</h1>
+                    <div class="back-text" id="back-text">
+                        <span>PHISHDETECT</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div>
+                <p class="text">Safeguarding Your Online Presence and Preserving Data Integrity: PhishDetect's Cutting-Edge Machine Learning Technology for Proactive Phishing URL Detection and Prevention</p>
+            </div>
+            <div class="btnc">
+                {% if user.is_authenticated %}
+            <div style="display: flex; justify-content: center; margin-top: 20px; margin-bottom: 10rem;">
+                <a href="/products/"> <button type="submit" class="btn active btn_custome hov" >Get Started</button> </a>
+            </div>
+            {% else %}
+            <div style="display: flex; justify-content: center; margin-top: 20px; gap: 15px;">
+                <a class="nav-link" href="/accounts/register?next={{request.path}}"><button type="submit" class="btn active btn_custome" >Sign Up For Free</button></a>
+                <a class="nav-link" href="/about/"> <button type="submit" class="btn active" style="border-color: #333; padding: 10px;">Why PhishDetect?</button></a>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+        
+{% endblock content %}

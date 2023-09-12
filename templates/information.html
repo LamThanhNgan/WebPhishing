@@ -1,0 +1,150 @@
+{% extends 'base/navbar.html' %}
+{% block head_extend %}
+<style>
+    .file-upload {
+        display: inline-flex;
+        align-items: center;
+        font-size: 15px;
+    }
+
+    .file-upload__input {
+        display: none;
+    }
+
+    .file-upload__button {
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+        padding: 0.5em 0.8em;
+        margin-right: 15px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .file-upload__button:active {
+        background: #00745d;
+    }
+</style>
+{% endblock %}
+
+{% block title_extend %}Information {{ data.User.username }}{% endblock %}
+{% block content %}
+{% if messages %}
+<div class="modal" tabindex="-1" id="notify">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-success">Notify</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="messages"></ul>
+                {% for message in messages %}
+                <li class="text-dark" {% if message.tags %} class="{{ message.tags }}" {% endif %}
+                    style="list-style: none;">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+<div class="row col-12 list-subject justify-content-center" style="margin-bottom: 10rem; margin-top: 3rem;">
+    <div class="col-10 row justify-content-center" style="padding-top: 30px;">
+        <form class="col-12 row" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-8">
+                <div class="form-group row">
+                    <label for="username" class="col-sm-2 col-form-label">Username:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="username" disabled value="{{ user.username }} "
+                            required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Phone" class="col-sm-2 col-form-label">Phone:</label>
+                    <div class="col-sm-10">
+                        {{ form.Phone }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Facebook" class="col-sm-2 col-form-label">Facebook:</label>
+                    <div class="col-sm-10">
+                        {{ form.Facebook }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Email" class="col-sm-2 col-form-label">Email:</label>
+                    <div class="col-sm-10">
+                        {{ form.Email }}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-info">Update</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3" style="font-size: 30px;">
+                <div class="avatar" id="profile-avatar" style="
+                    background-image: url('{{ data.User.last_name }}');
+                    width:200px;
+                    height:200px;
+                    background-position: center; 
+                    background-repeat: no-repeat; 
+                    background-size: cover; 
+                    border-radius: 50% ;
+                " onchange=profile-avatar()></div>
+                <input class="file-upload__input" type="file" name="Avatar" accept="image/*" id="id_Avatar"
+                    onchange="showPreview(event);">
+                {% comment %} {{ form.Avatar }} {% endcomment %}
+                <button class="file-upload__button" type="button"><i class="fas fa-camera"></i></button>
+
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block script_body %}
+
+<script language="javascript">
+    document.getElementById("id_Facebook").value = "{{ data.0.Facebook }}";
+    document.getElementById("id_Phone").value = "{{ data.0.Phone }}";
+    document.getElementById("id_Email").value = "{{ user.email }}";
+    {% comment %} hàm tạo nút thêm ảnh {% endcomment %}
+    Array.prototype.forEach.call(
+        document.querySelectorAll(".file-upload__button"),
+        function (button) {
+            const hiddenInput = button.parentElement.querySelector(".file-upload__input");
+
+            button.addEventListener("click", function () { hiddenInput.click(); });
+
+            hiddenInput.addEventListener("change", function () {
+                const filenameList = Array.prototype.map.call(hiddenInput.files, function (file) {
+                    return file.name;
+                });
+            });
+        }
+    );
+    {% comment %} hàm xem trước ảnh {% endcomment %}
+    function showPreview(event) {
+        if (event.target.files.length > 0) {
+            var src = URL.createObjectURL(event.target.files[0]);
+            var preview = document.getElementById("profile-avatar");
+            preview.style.backgroundImage = 'url(' + src + ')';
+        }
+    }
+    var myModal = new bootstrap.Modal(document.getElementById('notify'), {})
+
+    myModal.toggle()
+</script>
+{% endblock%}

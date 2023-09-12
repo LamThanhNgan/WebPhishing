@@ -1,0 +1,8 @@
+./model/Lib/
+venv/
+**/__pycache__/**
+phishpedia_models/
+Phishpedia/
+detectron2-windows/
+Main_extract/results/
+db.sqlite3

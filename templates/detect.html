@@ -1,0 +1,140 @@
+{% extends 'base/navbar.html' %}
+
+{% load static %}
+
+{% block title_extend %}PhishDetect{% endblock %}
+
+{% block head_extend %}
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'product/css/detect.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<div class="wrapper" style="margin-bottom: 10rem;">
+    <div class="container-fluid mt-5 pt-3">
+        <section id="header" class="title">
+            <h1>PHISHDETECT</h1>
+            <p class="text">Using intelligent algorithms, PhishDetect
+                scrutinizes URLs, swiftly identifying and flagging suspicious
+                elements associated with phishing attempts, empowering users to
+                stay protected in the digital landscape.</p>
+            <hr>
+        </section>
+
+        <div class="searchContain row">
+            <img src="{% static 'product/img/www.png' %}" class="col-2" />
+            {% if user.is_authenticated %}
+            <form method='POST' class="col-10">
+                {% csrf_token %}
+                <div class="form-group" style="margin: 0; flex: 1;">{{form.url}}</div>
+                <button type="submit" class="btn active btn_custome" onclick="activeLoadingEffect()"> Submit</button>
+            </form>
+
+            {% else %}
+            <form method='GET' class="col-10">
+                <div class="form-group" style="margin: 0; flex: 1;"><input type="url" class="form-control"
+                        placeholder="Search"></div>
+                <a href="/accounts/login?next={{request.path}}" class="btn btn_custome">Submit</a>
+            </form>
+            {% endif%}
+
+        </div>
+        {% ifequal process False %}
+        <strong>Unfinished!</strong> The process of determining the phishing url
+        has been interrupted. Try again!
+        {% endifequal %}
+
+        <script>
+            function activeLoadingEffect() {
+                var element = document.getElementById("loading-container");
+                element.classList.add("active");
+
+                // setTimeout(function() {
+                //     element.classList.remove("active");
+                // },1000)
+            }
+        </script>
+        <div id="loading-container">
+            <div class="spinner-grow loading-spinner" role="status" style="color: #86aaf9;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #86aaf9;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #5588f6;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #3d77f5;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #2566f4;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #0d55f3;"></div>
+            <div class="spinner-grow loading-spinner" role="status" style="color: #0b4dda;"></div>
+        </div>
+    </div>
+
+    <!-- <div class="row">
+                <div class="cmt col-md-6 col-12 " style="background-color: dark; margin-top: 1rem;">
+        
+                   
+                {% ifequal process True %}          
+                    <div class="alert_success">
+                        <span class="closebtn">&times;</span>  
+                        <strong>Success!</strong> The process of identifying the phishing url is completed.
+                        
+                    </div>
+                {% endifequal %}
+                
+
+                </div>
+                <hr class="light-contact" />
+            </div> -->
+
+    <div>
+        <h4 style="margin-bottom: 10px; ">Recently Detected URLs</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th><img src="{% static 'product/img/testing.png' %}"
+                                            style="width: 30px; max-height: fit-content;" /></th>
+                                    <th>Url</th>
+                                    <th>State</th>
+                                    <th>Age</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for urls in url %}
+                                <tr>
+
+                                    {% ifequal urls.status "normal" %}
+                                    <th scope="row"><img src="{% static 'product/img/check.png' %}"
+                                            style="width: 15px; max-height: fit-content;" /></th>
+
+                                    {% endifequal %}
+
+                                    {% ifequal urls.status "phishing" %}
+                                    <th scope="row"><img src="{% static 'product/img/crossed.png' %}"
+                                            style="width: 15px; max-height: fit-content;" /></th>
+
+                                    {% endifequal %}
+                                    {% ifequal urls.status "warning" %}
+                                    <th scope="row"><img src="{% static 'product/img/warning.png' %}"
+                                            style="width: 20px; max-height: fit-content;" /></th>
+
+                                    {% endifequal %}
+                                    <td><a href="/products/viewurl/{{urls.url_id}}" class="link-underline-light"
+                                            style="color: #333;">{{urls.url}}</a></td>
+
+                                    <td>{{urls.status}}</td>
+                                    <td>{{urls.time.date}}</td>
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
+{% endblock %}
+<script src="https://kit.fontawesome.com/9439a40bb1.js" crossorigin="anonymous"></script>
+{% block script_extend %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base/navbar.html' %}
+{% block title %}Error 404 | Không tìm thấy trang{% endblock %}
+{% block content_title %}404 Opps! Page not found{% endblock %}
+{% block content %}
+    <div class="error-page p-2 " style="margin-top: 10px; height: 600px;">
+        <div class="content text-center" style="margin-top: 10px;">
+            <h4 data-text="Opps! Page not found">Trang <i>{{ request.build_absolute_uri }}</i> không tồn tại</h4>
+            <h4>Vui lòng kiểm tra lại đường dẫn, bạn có thể quay lại trang chủ.</h4>
+            <a href="/"><button type="button" class="btn btn-primary mybtn">Về Trang chủ</button></a>
+        </div>
+    </div>
+{% endblock %}
+ 
